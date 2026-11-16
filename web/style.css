@@ -1,0 +1,125 @@
+/* style.css */
+/* Premium dark theme with gradient background */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+:root {
+  --primary-color: #d4af37; /* gold */
+  --bg-gradient: linear-gradient(135deg, #1a1a2e, #16213e);
+  --font-family: 'Inter', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background: var(--bg-gradient);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.logo-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 2rem;
+  perspective: 800px;
+}
+
+.logo-part {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background-image: url('file:///C:/Users/Administrator/.gemini/antigravity/brain/0da7d3a5-d709-4403-bbe3-003141798581/logo_placeholder_1793618367123.png');
+  background-size: cover;
+  background-position: center;
+  backface-visibility: hidden;
+}
+
+.logo-part.left {
+  left: 0;
+  transform: translateX(-100%);
+  animation: slideInLeft 1.5s ease-out forwards 0.5s;
+}
+
+.logo-part.right {
+  right: 0;
+  transform: translateX(100%);
+  animation: slideInRight 1.5s ease-out forwards 0.5s;
+}
+
+@keyframes slideInLeft {
+  to { transform: translateX(0); }
+}
+@keyframes slideInRight {
+  to { transform: translateX(0); }
+}
+
+.form-container {
+  background: rgba(255,255,255,0.1);
+  padding: 2rem;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  width: 320px;
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+}
+
+.form-container h1 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+form input {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+  font-size: 1rem;
+}
+
+form button {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--primary-color);
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+form button:hover {
+  transform: scale(1.02);
+}
+
+form p {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+form a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+@media (max-width: 480px) {
+  .logo-container { width: 150px; height: 150px; }
+  .form-container { padding: 1.5rem; }
+}
